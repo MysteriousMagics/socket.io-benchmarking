@@ -1,10 +1,32 @@
 # Socket.IO Benchmark
 
-TODO
+## Install Dependencies on Ubuntu
 
-## How to Install
+```
+sudo apt-get install python python-dev python-pip maven
+sudo pip install websocket
+```
 
-For server (Node.js) - install it with npm
+## Clone and initialize this repo
 
-For client (Java App) - go to the client folder and type 'mvn install'. make sure you install maven before proceed.  
+```
+git clone https://github.com/drewww/socket.io-benchmarking.git
+cd socket.io-benchmarking
+sudo npm install
+cd client
+mvn install
+cd ..
+```
 
+## Start the server on port 94104
+
+```
+node server.js -p 94104
+```
+
+## Start the client
+
+```
+#localhost port 94104; 2 connections; 20 messages per second
+python client.py localhost -p 94104 -c 2 -C 20
+```
